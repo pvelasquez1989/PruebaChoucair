@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="phptravels.net" skipped="0" tests="1" time="11.96" timestamp="2021-01-08 06:38:42"><testcase name="login in the page phptravels"><error message="Arity mismatch: Step Definition 'co.com.prueba.choucair.stepdefinitions.PruebaChoucairStepDefinitions.heLoginWithUsernameAndPassword() in file:/C:/Users/DELL/eclipse-workspace/PruebaChoucair/bin/test/' with pattern [^he login with (.*) and (.*)$] is declared with 0 parameters. However, the gherkin step has 2 arguments [username, password]. &#10;Step text: he login with username and password" type="cucumber.runtime.CucumberException">Arity mismatch: Step Definition 'co.com.prueba.choucair.stepdefinitions.PruebaChoucairStepDefinitions.heLoginWithUsernameAndPassword() in file:/C:/Users/DELL/eclipse-workspace/PruebaChoucair/bin/test/' with pattern [^he login with (.*) and (.*)$] is declared with 0 parameters. However, the gherkin step has 2 arguments [username, password]. 
+Step text: he login with username and password</error><system-err>Arity mismatch: Step Definition 'co.com.prueba.choucair.stepdefinitions.PruebaChoucairStepDefinitions.heLoginWithUsernameAndPassword() in file:/C:/Users/DELL/eclipse-workspace/PruebaChoucair/bin/test/' with pattern [^he login with (.*) and (.*)$] is declared with 0 parameters. However, the gherkin step has 2 arguments [username, password]. 
+Step text: he login with username and password&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)&#13;
+org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:542)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:770)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:464)&#13;
+org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)&#13;
+</system-err></testcase></testsuite>
