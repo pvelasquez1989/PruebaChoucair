@@ -129,7 +129,7 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 11-01-2021 23:22</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 12-01-2021 09:20</span>
     <br style="clear:left"/>
 </div>
 
@@ -166,9 +166,9 @@ to add blog categories
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><i class='fa fa-exclamation-triangle error-icon fa-2x' title='ERROR'></i></span>
+                            <span class="outcome-icon"><i class='fa fa-times-circle failure-icon fa-2x' title='FAILURE'></i></span>
                             <span class="test-case-title">
-                                <span class="error-color">login in the page phptravels login
+                                <span class="failing-color">login in the page phptravels login
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -195,7 +195,7 @@ to add blog categories
         <div class="table">
             <div class="row">
                 <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
-                    <span class="error-message error-message-title">No such frame exception: no such frame: element is not a frame</span>
+                    <span class="error-message error-message-title">Element should be enabled exception: Expected enabled element was not enabled</span>
                 </div>
                 <div class="col-sm-2">
                     <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall""
@@ -211,13 +211,20 @@ to add blog categories
         <div class="collapse multi-collapse" id="stacktraceModal-overall">
             <div class="card">
                 <div class="card-header">
-                    <h4>org.openqa.selenium.NoSuchFrameException </h4>
+                    <h4>net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException </h4>
                 </div>
                 <div class="card-body">
                     <div>
-                        <pre>co.com.prueba.choucair.interactions.SwitchTo.performAs(SwitchTo.java:23)<br />co.com.prueba.choucair.tasks.AddPost.performAs(AddPost.java:45)<br />co.com.prueba.choucair.stepdefinitions.PruebaChoucairStepDefinitions.heAddCategoriesInPhptravelsPageAndPost(PruebaChoucairStepDefinitions.java:48)<br />cucumber.runner.Runner.runPickle(Runner.java:80)<br />org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)<br />org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:542)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:770)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:464)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)<br /></pre>
+                        <pre>co.com.prueba.choucair.tasks.LoginPhpTravels.performAs(LoginPhpTravels.java:32)<br />co.com.prueba.choucair.stepdefinitions.PruebaChoucairStepDefinitions.heAddCategoriesInPhptravelsPageAndPost(PruebaChoucairStepDefinitions.java:45)<br />cucumber.runner.Runner.runPickle(Runner.java:80)<br />org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:89)<br />org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:41)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:542)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:770)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:464)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)<br /></pre>
                     </div>
 
+                    <h4>
+                        Caused by: org.openqa.selenium.TimeoutException
+                    </h4>
+                    <div>
+                            <pre>Expected condition failed: waiting for By.xpath: (//input[@name='email'])[1] to be enabled (tried for 20 second(s) with 100 milliseconds interval)</pre>
+                        <pre>co.com.prueba.choucair.tasks.LoginPhpTravels.performAs(LoginPhpTravels.java :32)<br />co.com.prueba.choucair.stepdefinitions.PruebaChoucairStepDefinitions.heAddCategoriesInPhptravelsPageAndPost(PruebaChoucairStepDefinitions.java :45)<br />cucumber.runner.Runner.runPickle(Runner.java :80)<br />org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java :89)<br />org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java :41)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java :542)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java :770)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java :464)<br />org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java :210)<br /></pre>
+                    </div>
                 </div>
             </div>
         </div>
@@ -225,15 +232,15 @@ to add blog categories
 
 
                 <div class="panel-body">
-                    <a href="pagesource8611226024255720002.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
+                    <a href="pagesource6876946421468180773.html.txt" target="_blank" class="btn btn-info">HTML Source</a>
                 </div>
             </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="4013da611a82d48568f6d889edddb9ed06c392651f76e9a59db25f760658aca8.png" title=" Example: {description=login, scenarioNumber=2}" width="1920"/>
-                <img src="4013da611a82d48568f6d889edddb9ed06c392651f76e9a59db25f760658aca8.png" title=" When he add categories in phptravels page and post 2" width="1920"/>
-                <img src="4013da611a82d48568f6d889edddb9ed06c392651f76e9a59db25f760658aca8.png" title=" Pedro add post" width="1920"/>
-                <img src="4013da611a82d48568f6d889edddb9ed06c392651f76e9a59db25f760658aca8.png" title=" Pedro switch to: <span class='error-color'>ERROR</span>" width="1920"/>
+                <img src="234bf36b57e8b6e0add71a3d07dcb84e6a47f166d8acdbf830d7e0b12787624d.png" title=" Example: {description=login, scenarioNumber=2}" width="1920"/>
+                <img src="234bf36b57e8b6e0add71a3d07dcb84e6a47f166d8acdbf830d7e0b12787624d.png" title=" When he add categories in phptravels page and post 2" width="1920"/>
+                <img src="234bf36b57e8b6e0add71a3d07dcb84e6a47f166d8acdbf830d7e0b12787624d.png" title=" Pedro login php travels" width="1920"/>
+                <img src="234bf36b57e8b6e0add71a3d07dcb84e6a47f166d8acdbf830d7e0b12787624d.png" title=" Pedro enters 'admin@phptravels.com' into email: <span class='failing-color'>FAILURE</span>" width="1920"/>
             </div>
         </div>
 
