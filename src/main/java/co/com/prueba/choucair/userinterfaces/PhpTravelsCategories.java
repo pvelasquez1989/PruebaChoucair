@@ -21,7 +21,7 @@ public class PhpTravelsCategories {
 	public static final Target NAME_IN_SPANICH = Target.the("Name in french").locatedBy("(//div//input[@class= \"form-control\"])[8]");
 	public static final Target NAME_IN_GERMAN = Target.the("Name in french").locatedBy("(//div//input[@class= \"form-control\"])[9]");
 	public static final Target ADD_CATEGORIES = Target.the("Add categories").locatedBy("(//div//button[@class= \"btn btn-primary\"])[1]");
-	public static final Target CATEGORY_VALIDATION = Target.the("Category validation").locatedBy("//tr//td[@xpath=\"1\"]");
+	public static final Target CATEGORY_VALIDATION = Target.the("Category validation").locatedBy("(//td[contains(text(),'towns')])[1]").waitingForNoMoreThan(Duration.of(5, SECONDS));
 	
 	
 	

@@ -5,6 +5,7 @@ import static co.com.prueba.choucair.userinterfaces.PhpTravelsCategories.*;
 import java.util.List;
 
 import co.com.prueba.choucair.interactions.Wait;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 import co.com.prueba.choucair.interactions.WaitUntilClickable;
 import co.com.prueba.choucair.questions.CheckItemBlogAfterCategories;
@@ -15,6 +16,7 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
+import static org.hamcrest.Matchers.equalTo;
 
 public class AddCategories implements Task{
 
@@ -33,9 +35,9 @@ public class AddCategories implements Task{
 		
 		actor.attemptsTo(
 				Click.on(ITEM_BLOG),
-				Wait.aWhile(1),
+				Wait.aWhile(2),
 				Click.on(BLOG_CATEGORIES),
-				WaitUntilClickable.element(BUTTON_ADD_CATEGORY, 50),
+				WaitUntilClickable.element(BUTTON_ADD_CATEGORY, 10),
 				Click.on(BUTTON_ADD_CATEGORY),
 				Enter.theValue(listData.get(2)).into(CATEGORY_NAME),
 				Wait.aWhile(1),
@@ -50,7 +52,9 @@ public class AddCategories implements Task{
 				Enter.theValue(listData.get(10)).into(NAME_IN_GERMAN),
 				Click.on(ADD_CATEGORIES),
 		        Wait.aWhile(1));
-//		        CheckItemBlogAfterCategories.theTitleOnPage(CATEGORY_VALIDATION));
+		
+		actor.should(seeThat(CheckItemBlogAfterCategories.theTitleOnPage(),equalTo("towns")));
+
 		
 		        
 				

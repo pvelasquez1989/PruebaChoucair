@@ -1,44 +1,26 @@
 package co.com.prueba.choucair.questions;
 
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.ensure.Ensure;
 
-import java.util.logging.Logger;
-
+import net.serenitybdd.screenplay.questions.Text;
 
 
-import static co.com.prueba.choucair.userinterfaces.PhpTravelsCategories.*;
+import static co.com.prueba.choucair.userinterfaces.PhpTravelsCategories.CATEGORY_VALIDATION;
 
 
-public class CheckItemBlogAfterCategories implements Question<Boolean> {
+
+
+public class CheckItemBlogAfterCategories implements Question<String> {
 	
-	private String testcategories;
-	private static final Logger LOGGER = Logger.getLogger(CheckItemBlogAfterCategories.class.getName());
 	
-	public CheckItemBlogAfterCategories(String testcategories) {
-		this.testcategories = testcategories;
-	}
-			
-			
 	@Override
-	public Boolean answeredBy(Actor actor) {
+	public String answeredBy(Actor actor) {
 		
-		if (CATEGORY_VALIDATION.resolveFor(actor).isCurrentlyVisible()) {
-			actor.attemptsTo(Ensure.that(CATEGORY_VALIDATION).text().contains(testcategories)
-					);
-			
-			
-		} else {
-            LOGGER.info("THE TITLE ISN'T ON THE PAGE");
-            return false;
-       }
-
-					return true;
+		return Text.of(CATEGORY_VALIDATION).viewedBy(actor).asString();
     }
 
-	public static CheckItemBlogAfterCategories theTitleOnPage(String testcategories) {
-		return new CheckItemBlogAfterCategories(testcategories);
+	public static CheckItemBlogAfterCategories theTitleOnPage() {
+		return new CheckItemBlogAfterCategories();
 	}
 }

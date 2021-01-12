@@ -10,11 +10,12 @@ import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
 import static net.serenitybdd.screenplay.actors.OnStage.*;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import static co.com.prueba.choucair.questions.CheckItemBlogAfterCategories.theTitleOnPage;
+
 
 
 import co.com.prueba.choucair.tasks.LoginPhpTravels;
 import co.com.prueba.choucair.tasks.AddCategories;
+import co.com.prueba.choucair.tasks.AddPost;
 
 import static co.com.prueba.choucair.utils.WebDriver.chrome;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
@@ -41,8 +42,10 @@ public class PruebaChoucairStepDefinitions {
 	
 	@When("^he add categories in phptravels page and post (.*)$")
 	public void heAddCategoriesInPhptravelsPageAndPost(String scenarioNumber) {
-		theActorInTheSpotlight().attemptsTo(LoginPhpTravels.option(scenarioNumber, "Phptravels"));
-		theActorInTheSpotlight().attemptsTo(AddCategories.menuoption(scenarioNumber, "Phptravels"));
+		theActorInTheSpotlight().attemptsTo(LoginPhpTravels.option(scenarioNumber, "Phptravels"),
+	                                        AddCategories.menuoption(scenarioNumber, "Phptravels"));
+		
+		theActorInTheSpotlight().attemptsTo(AddPost.menuoptionpost(scenarioNumber, "Posts"));
 	}
 
 	

@@ -20,14 +20,4 @@ Feature: phptravels.net
     
     
   
-  #Scenario Outline: add categories in the option blogs <description>
-    #Given that user wants add categories  
-    #When he add data in the categories <scenarioNumber>
-    #Then he should see title test in the screen
-    
-    
-
-  #Scenario: add posts in the option blogs
-    #Given that user wants add posts
-    #When he add data in the posts
-    #Then he should see title test in the screen
+  
