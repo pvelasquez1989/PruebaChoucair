@@ -5,15 +5,14 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-
 import static net.serenitybdd.screenplay.actors.OnStage.*;
+import static org.hamcrest.Matchers.equalTo;
+
 import net.serenitybdd.screenplay.actors.OnlineCast;
-
-
-
 import co.com.prueba.choucair.tasks.LoginPhpTravels;
+import co.com.prueba.choucair.questions.CheckItemBlogAfterCategories;
+import co.com.prueba.choucair.questions.ValidationPosts;
 import co.com.prueba.choucair.tasks.AddCategories;
 import co.com.prueba.choucair.tasks.AddPost;
 
@@ -52,8 +51,8 @@ public class PruebaChoucairStepDefinitions {
 	
 
 	@Then("^he should see title (.*) in the screen$")
-	public void heShouldSeeTitleBlogInTheScreen(String blog) {
-	//	theActorInTheSpotlight().should(seeThat(theTitleOnPage("BLOG")));
+	public void heShouldSeeTitleTownsInTheScreen(String towns) {
+		theActorInTheSpotlight().should(seeThat(ValidationPosts.namecategory(),equalTo("towns")));
 			
 	
 	}

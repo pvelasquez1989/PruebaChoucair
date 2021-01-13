@@ -12,7 +12,7 @@ Feature: phptravels.net
   
     Given that user wants login in the page phptravels
     When he add categories in phptravels page and post <scenarioNumber>
-    Then he should see title blog in the screen
+    Then he should see title towns in the screen
     
     Examples:
     |description|scenarioNumber|

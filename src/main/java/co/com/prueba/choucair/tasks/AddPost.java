@@ -8,15 +8,18 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-import co.com.prueba.choucair.interactions.SwitchTo;
+
 import co.com.prueba.choucair.interactions.Wait;
 import co.com.prueba.choucair.interactions.WaitUntilClickable;
 import co.com.prueba.choucair.utils.FilloConnection;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Upload;
@@ -37,7 +40,7 @@ public class AddPost implements Task{
 	
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		
+		ChromeDriver chromeDriver = (ChromeDriver) BrowseTheWeb.as(actor).getDriver();
 		List<String> listData = FilloConnection.data(scenarioNumber, sheetName);
 		
 		actor.attemptsTo(
@@ -52,13 +55,21 @@ public class AddPost implements Task{
 				Click.on(CATEGORY_SELECT),
 				Wait.aWhile(3),
 				Click.on(RELATED_POSTS),
+				Click.on(ITEM_RELATED_POSTS),
 				Upload.theFile(RUTA_PATH).to(ATTACH_IMAGE),
-				Wait.aWhile(5),
-		    	SwitchTo.frame(),
-				WaitUntilClickable.element(TOWNS_INFO, 5),
-				Enter.theValue(listData.get(2)).into(TOWNS_INFO)
+				Wait.aWhile(5));
+				chromeDriver.switchTo().frame(chromeDriver.findElement(By.cssSelector("iframe[title='Rich Text Editor, desc']")));
 				
+				actor.attemptsTo(
+						WaitUntilClickable.element(TOWNS_INFO, 5),				
+				Enter.theValue(listData.get(2)).into(TOWNS_INFO));
+				chromeDriver.switchTo().defaultContent();
 				
+				actor.attemptsTo(
+						Enter.theValue(listData.get(3)).into(KEYWORDS),
+						Enter.theValue(listData.get(4)).into(DESCRIPTION_OPTION),
+						Click.on(SUBMIT_BUTTON)
+						
 				);
 		
 		

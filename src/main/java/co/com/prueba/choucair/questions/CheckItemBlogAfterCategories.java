@@ -18,6 +18,7 @@ public class CheckItemBlogAfterCategories implements Question<String> {
 	public String answeredBy(Actor actor) {
 		
 		return Text.of(CATEGORY_VALIDATION).viewedBy(actor).asString();
+		
     }
 
 	public static CheckItemBlogAfterCategories theTitleOnPage() {
